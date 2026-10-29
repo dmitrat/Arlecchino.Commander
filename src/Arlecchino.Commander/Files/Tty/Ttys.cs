@@ -25,6 +25,11 @@ public abstract class Ttys
 
     private static Ttys Pick()
     {
+        if (WitOsTtys.Here)
+        {
+            return WitOsTtys.Instance;
+        }
+
         if (OperatingSystem.IsLinux())
         {
             return LinuxTtys.Instance;
